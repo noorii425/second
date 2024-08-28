@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background:lightcoral;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+        .full {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+        }
+        input {
+            padding: 8px;
+            margin: 10px;
+            width: calc(100% - 20px);
+        }
+       .one{
+            margin: 0;
+            padding: 3px;
+        }
+        .two{
+            padding: 2px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <div class="full">
+        <form id="loginForm">
+            <label for="username">Enter username: </label><br>
+            <input type="text" id="name" placeholder="Enter name" required><br>
+  
+            <label for="password">Enter password: </label><br>
+            <input type="password" id="password" placeholder="Enter password" required minlength="8"><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var password = document.getElementById('password').value;
+
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                return false;
+            }
+
+            // If all checks pass, set the form action and submit
+            event.target.action = 'shopping.html';
+            event.target.submit();
+        });
+    </script>
+</body>
+</html>
